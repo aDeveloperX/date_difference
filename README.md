@@ -15,18 +15,18 @@ base on millisecond which means it can be inaccurate. So if you want to check th
   
 ## How to run:
    1. Navigate into project folder
-   2. Run "node solution.js" in command line if you already have node.js installed
+   2. Run `node solution.js` in command line if you already have node.js installed
 
 ## How to add test cases: 
-   1. Simply edit tests.txt file and follow the given format 
-   2. Make sure the "start" date is prior to "end" date
+   1. Simply edit `tests.txt` file and follow the given format 
+   2. Make sure the `start` date is prior to "end" date
    3. One line one case (do not use more than one line to write one test case)
-   4. The attribute "outOfRange" is optional but it should be set to "true" whenever the start date or end date is out of the given 
-   range which is 1900-2010
+   4. The attribute `outOfRange` is optional but it should be set to `true` whenever the start date or end date is out of the given 
+   range which is from 1900 to 2010
    
 ## Test Data Format: 
    
-   {"start": "DD MM YYYY", "end": "DD MM YYYY", "outOfRange": "true", "description": "Something"}
+   `{"start": "DD MM YYYY", "end": "DD MM YYYY", "outOfRange": "true", "description": "Something"}`
    
    
 ## Sample Output:
