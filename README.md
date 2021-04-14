@@ -5,7 +5,7 @@ Email: w369371@gmail.com
 Please Notice:
 
 1. The checkResults function uses a "weird" way to check if the actual result is the same as the expected result is because the expected result is calculated
-base on millisecond which means it can be inaccurate. So if you want to check the accurate result, please check on "https://www.timeanddate.com/date/durationresult.html"
+base on millisecond which means it can be inaccurate. So if you want to check the accurate result, please refer to "https://www.timeanddate.com/date/durationresult.html"
  
  
 2. Some functions might be hard to read because I want to use more advanced approachs to demostrate my skills better, normally my code is very human-readable :)
