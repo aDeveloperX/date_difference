@@ -30,5 +30,6 @@ How to add test cases:
 Sample Output:
 
 
-![Screen Shot 2021-04-15 at 00 54 35](https://user-images.githubusercontent.com/51860496/114731546-30362c80-9d85-11eb-9e41-f5472d66ddaf.png)
+![Screen Shot 2021-04-15 at 00 58 10](https://user-images.githubusercontent.com/51860496/114732267-ba7e9080-9d85-11eb-991d-83b8f9afa73b.png)
+
 
