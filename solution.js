@@ -16,6 +16,7 @@
 // Deliverables:
 // The source files, the test data and any test code.
 
+// Import fs module to read test.txt file
 const fs = require("fs");
 
 /**
