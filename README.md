@@ -11,7 +11,7 @@ base on millisecond which means it can be inaccurate. So if you want to check th
 2. Some functions might be hard to read because I want to use more advanced approachs to demonstrate my skills better, normally my code is very human-readable :)
     
     
-3. The program will be tested against all test cases in tests.txt and the output will be printed in terminal using console.log. This program does not require any user input. If you want to change test cases, please refer to the "How to add test cases" section below
+3. The program will be tested against all test cases in `tests.txt` and the output will be printed in terminal using `console.log`. This program does not require any user input. If you want to change test cases, please refer to the "How to add test cases" section below
   
 ## How to run:
    1. Navigate into project folder
