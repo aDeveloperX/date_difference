@@ -102,7 +102,7 @@ const getPassedDays = (dateObj) => {
  * @param {string} secondStr - The second given string in format of DD MM YYYY
  * @returns The total days between the two given dates
  */
-const solution = (firstStr, secondStr) => {
+const date_difference = (firstStr, secondStr) => {
   // Keys used to construct the objects
   const keys = ["day", "month", "year"];
   // Construct the two strings to objects
@@ -132,3 +132,100 @@ const solution = (firstStr, secondStr) => {
     getPassedDays(date_second)
   );
 };
+
+//------------ FOR TEST OUTPUT ------------//
+
+/**
+ * Parse DD MM YYYY to MM/DD/YYYY
+ * @param {string} date - Date object in format of DD MM YYYY
+ * @returns Date object in format of MM/DD/YYYY
+ */
+const dateParser = (date) => {
+  let dateHolder = date.split(" ");
+  return [dateHolder[1], dateHolder[0], dateHolder[2]].join("/");
+};
+
+/**
+ * Calculate the answer based on the Date Object to get the actual result
+ * @param {string} startDate - Starting date in format of DD MM YYYY
+ * @param {string} endDate - End date in format of DD MM YYYY
+ * @returns The total days between the two given dates
+ */
+const getAnswerByLibrary = (startDate, endDate) => {
+  let [newStartDate, newEndDate] = [startDate, endDate].map((date) =>
+    dateParser(date)
+  );
+  const date_first = new Date(newStartDate);
+  const date_second = new Date(newEndDate);
+  // Calculate time difference
+  const time_difference = date_second - date_first;
+  // Calculate days difference by dividing total milliseconds of a day
+  return time_difference / (1000 * 60 * 60 * 24);
+};
+
+/**
+ * Check if the actual result is the same as the expect
+ * !!!!!!!!!! The expected result is calculated base on millisecond so it can be decimal number(+=1 days) !!!!!!!!
+ * !!!!!!!!!! So there might be inaccuracy so I round it up or down and + 1 and - 1 to fix that !!!!!!!!
+ * @param {number} actual - The actual calculated result using the function called "date_difference"
+ * @param {*} expected  - The expected result using the function called "getAnswerByLibrary"
+ * @returns {boolean} Returns if the results are the same
+ */
+const checkResults = (actual, expected) => {
+  return (
+    actual === expected - 1 ||
+    actual === expected + 1 ||
+    actual === expected ||
+    actual === Math.floor(expected) ||
+    actual === Math.round(expected)
+  );
+};
+
+const main = () => {
+  try {
+    // Extract content out of the tests.txt file
+    const data = fs.readFileSync("tests.txt", "UTF-8");
+    // Split the contents
+    const rows = data.split(/\r?\n/);
+    // Iterate over each test case
+    rows.forEach((row, i) => {
+      // If the line is not empty
+      if (row) {
+        const parsedTest = JSON.parse(row);
+        const actualResult = date_difference(parsedTest.start, parsedTest.end);
+        const expectedResult = getAnswerByLibrary(
+          parsedTest.start,
+          parsedTest.end
+        );
+
+        // If the results are the same => Pass
+        if (checkResults(actualResult, expectedResult)) {
+          console.log(
+            ` Test ${
+              i + 1
+            } Passed, [Expect: ${expectedResult}, Actual: ${actualResult}]`
+          );
+          // If the date is out of the given range => Pass
+        } else if (
+          expectedResult === "Year should be in range of 1900 - 2010" &&
+          row.description === "Special case: The starting date is out of range"
+        ) {
+          console.log(
+            ` Test ${
+              i + 1
+            } Passed, Special case: The starting date is out of range`
+          );
+          // Failed test case
+        } else {
+          ` Test ${
+            i + 1
+          } Failed, [Expect: ${expectedResult}, Actual: ${actualResult}]`;
+        }
+      }
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+main();
