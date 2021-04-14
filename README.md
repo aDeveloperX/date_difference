@@ -8,7 +8,7 @@ Please Notice:
 base on millisecond which means it can be inaccurate. So if you want to check the accurate result, please refer to "https://www.timeanddate.com/date/durationresult.html"
  
  
-2. Some functions might be hard to read because I want to use more advanced approachs to demostrate my skills better, normally my code is very human-readable :)
+2. Some functions might be hard to read because I want to use more advanced approachs to demonstrate my skills better, normally my code is very human-readable :)
     
   
 How to run:
