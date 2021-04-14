@@ -22,4 +22,6 @@ How to add test cases:
    4. The attribute "outOfRange" is optional but it should be set to "true" whenever the start date or end date is out of the given 
    range which is 1900-2010
    
-   Test Data Format" {"start": "DD MM YYYY", "end": "DD MM YYYY", "outOfRange": "true", "description": "Something"}
+   Test Data Format: 
+   
+   {"start": "DD MM YYYY", "end": "DD MM YYYY", "outOfRange": "true", "description": "Something"}
