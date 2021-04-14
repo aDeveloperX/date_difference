@@ -134,7 +134,7 @@ const date_difference = (firstStr, secondStr) => {
   );
 };
 
-//------------ FOR TEST OUTPUT ------------//
+//------------- FOR TEST OUTPUT ------------//
 
 /**
  * Parse DD MM YYYY to MM/DD/YYYY
@@ -168,6 +168,8 @@ const getAnswerByLibrary = (startDate, endDate) => {
  * Check if the actual result is the same as the expect
  * !!!!!!!!!! The expected result is calculated base on millisecond so it can be decimal number(+=1 days) !!!!!!!!
  * !!!!!!!!!! So there might be inaccuracy so I round it up or down and + 1 and - 1 to fix that !!!!!!!!
+ * !!!!!!!!!! You can use the link below to check the accurate result !!!!!!!!
+ * !!!!!!!!!! https://www.timeanddate.com/date/durationresult.html !!!!!!!!
  * @param {number} actual - The actual calculated result using the function called "date_difference"
  * @param {*} expected  - The expected result using the function called "getAnswerByLibrary"
  * @returns {boolean} Returns if the results are the same
@@ -186,9 +188,12 @@ const main = () => {
   try {
     // Extract content out of the tests.txt file
     const data = fs.readFileSync("tests.txt", "UTF-8");
-    // Split the contents
-    const rows = data.split(/\r?\n/);
+    // Split the contents, remove space from rows array
+    const rows = data.split(/\r?\n/).filter((row) => row.trim() !== "");
     // Iterate over each test case
+    let passedCounter = 0,
+      failedCounter = 0,
+      executedCounter = 0;
     rows.forEach((row, i) => {
       // If the line is not empty
       if (row) {
@@ -201,16 +206,22 @@ const main = () => {
 
         // If the results are the same => Pass
         if (checkResults(actualResult, expectedResult)) {
+          passedCounter++;
+          executedCounter++;
           console.log(
             ` Test ${
               i + 1
-            } Passed, [Expect: ${expectedResult}, Actual: ${actualResult}]`
+            } Passed, [Expect: ${expectedResult}, Actual: ${actualResult}]  ${
+              parsedTest.description
+            }`
           );
-          // If the date is out of the given range => Pass
+          // If the date is out of the given range and outOfRange is true => Pass
         } else if (
-          expectedResult === "Year should be in range of 1900 - 2010" &&
-          row.description === "Special case: The starting date is out of range"
+          actualResult === "Year should be in range of 1900 - 2010" &&
+          parsedTest.outOfRange === "true"
         ) {
+          passedCounter++;
+          executedCounter++;
           console.log(
             ` Test ${
               i + 1
@@ -218,12 +229,18 @@ const main = () => {
           );
           // Failed test case
         } else {
+          failedCounter++;
+          executedCounter++;
           ` Test ${
             i + 1
           } Failed, [Expect: ${expectedResult}, Actual: ${actualResult}]`;
         }
       }
     });
+    console.log("\n=========Result=========");
+    console.log(
+      `Total Cases: ${rows.length}\nExecuted Cases: ${executedCounter}\nPassed Cases: ${passedCounter}\nFailed Cases: ${failedCounter}`
+    );
   } catch (err) {
     console.error(err);
   }
