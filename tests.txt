@@ -7,18 +7,18 @@
 {"start": "5 1 1998", "end": "6 2 1999", "description": "Special Case: Different year and the month of the starting date is less than the end month"}
 {"start": "01 07 1899", "end": "09 10 1964", "outOfRange": "true", "description": "Special Case: The starting date is out of range"}
 {"start": "01 07 1987", "end": "09 10 2011", "outOfRange": "true", "description": "Special Case: The end date is out of range"}
-{"start": "01 07 1898", "end": "09 10 2948", "outOfRange": "true", "description": "Special Case: Both the starting date and the end date are out of range"}
-{"start": "9 11 1996", "end": "3 1 2010", "description": "Random Case: Both dates are randomly generated"}
-{"start": "28 1 1999", "end": "14 4 2000", "description": "Random Case: Both dates are randomly generated"}
-{"start": "5 8 1993", "end": "17 7 2001", "description": "Random Case: Both dates are randomly generated"}
-{"start": "16 5 1929", "end": "4 11 1940", "description": "Random Case: Both dates are randomly generated"}
-{"start": "13 4 1956", "end": "17 5 1976", "description": "Random Case: Both dates are randomly generated"}
-{"start": "26 3 1911", "end": "23 10 1962", "description": "Random Case: Both dates are randomly generated"}
-{"start": "6 3 1920", "end": "23 11 1947", "description": "Random Case: Both dates are randomly generated"}
-{"start": "2 1 1942", "end": "4 6 1980", "description": "Random Case: Both dates are randomly generated"}
-{"start": "14 09 1955", "end": "10 06 1976", "description": "Random Case: Both dates are randomly generated"}
-{"start": "27 06 1945", "end": "03 08 2000", "description": "Random Case: Both dates are randomly generated"}
-{"start": "01 07 1924", "end": "09 10 1964", "description": "Random Case: Both dates are randomly generated"}
+{"start": "01 07 1898", "end": "09 10 2948", "outOfRange": "true", "description": "Special Case: Both the starting date and the end date were out of range"}
+{"start": "9 11 1996", "end": "3 1 2010", "description": "Random Case: Both dates were randomly generated"}
+{"start": "28 1 1999", "end": "14 4 2000", "description": "Random Case: Both dates were randomly generated"}
+{"start": "5 8 1993", "end": "17 7 2001", "description": "Random Case: Both dates were randomly generated"}
+{"start": "16 5 1929", "end": "4 11 1940", "description": "Random Case: Both dates were randomly generated"}
+{"start": "13 4 1956", "end": "17 5 1976", "description": "Random Case: Both dates were randomly generated"}
+{"start": "26 3 1911", "end": "23 10 1962", "description": "Random Case: Both dates were randomly generated"}
+{"start": "6 3 1920", "end": "23 11 1947", "description": "Random Case: Both dates were randomly generated"}
+{"start": "2 1 1942", "end": "4 6 1980", "description": "Random Case: Both dates were randomly generated"}
+{"start": "14 09 1955", "end": "10 06 1976", "description": "Random Case: Both dates were randomly generated"}
+{"start": "27 06 1945", "end": "03 08 2000", "description": "Random Case: Both dates were randomly generated"}
+{"start": "01 07 1924", "end": "09 10 1964", "description": "Random Case: Both dates were randomly generated"}
 
 
 
