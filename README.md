@@ -25,3 +25,10 @@ How to add test cases:
    Test Data Format: 
    
    {"start": "DD MM YYYY", "end": "DD MM YYYY", "outOfRange": "true", "description": "Something"}
+   
+   
+Sample Output:
+
+
+![Screen Shot 2021-04-15 at 00 54 35](https://user-images.githubusercontent.com/51860496/114731546-30362c80-9d85-11eb-9e41-f5472d66ddaf.png)
+
