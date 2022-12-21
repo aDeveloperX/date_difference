@@ -1,4 +1,4 @@
-Author: Yichuan Wang
+Author: R
 
 Email: w369371@gmail.com
 
